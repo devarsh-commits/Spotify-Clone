@@ -1,0 +1,12 @@
+.c-svg{
+    filter: invert();
+}
+.flex{
+    display: flex;
+}
+.justify-cont{
+    justify-content: center;
+}
+.align-itm{
+    align-items: center;
+}
