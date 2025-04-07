@@ -1,20 +1,24 @@
-body{
+body {
+    margin: 0;
+    padding: 0;
     background-color: black;
 }
---root{
+
+--root {
     --back-color: background-color: rgb(31, 30, 30);
 }
-.nav{
-    border: 2px solid white;
-    width: 98vw;
-    height:7vh;
-    padding: 5px;
+
+.nav {
+    /* border: 2px solid white; */
+    width: 100%;
+    height: 7vh;
+    padding-top: 15px;
     box-sizing: border-box;
-    margin: 5px auto;
-    position: relative;
-    
+    position: fixed;
+
 }
-.leftnav{
+
+.leftnav {
     fill: white;
     /* border: 2px solid red; */
     width: 50vw;
@@ -22,13 +26,15 @@ body{
     justify-content: space-around;
     gap: 10px;
 }
+
 .logo {
     /* width:50px; */
     height: 35px;
     padding-top: 6px;
-    
+
 }
-.circle{
+
+.circle {
     /* border: 2px solid white; */
     width: 100px;
     height: 45px;
@@ -37,18 +43,21 @@ body{
     justify-content: center;
     background-color: rgb(31, 30, 30);
     position: relative;
-    left: 20px;
+    left: 30px;
 }
-.home{
+
+.home {
     padding: 10px;
     width: 25px;
 }
-.Searchbox{
+
+.Searchbox {
     position: relative;
     left: 40px;
     /* border: 2px solid red; */
 }
-.slogo{
+
+.slogo {
     position: absolute;
     z-index: 1;
     left: 15px;
@@ -56,7 +65,8 @@ body{
     height: 30px;
     cursor: pointer;
 }
-.brow-s{
+
+.brow-s {
     position: absolute;
     z-index: 1;
     right: 20px;
@@ -64,26 +74,29 @@ body{
     height: 28px;
     cursor: pointer;
 }
-.nav input{
+
+.nav input {
     width: 25vw;
     height: 6vh;
     background-color: rgb(31, 30, 30);
     display: flex;
     justify-content: flex-start;
     font-family: var(--encore-body-font-stack, var(--fallback-fonts, sans-serif)), sans-serif;
-    font-weight:500;
+    font-weight: 500;
     font-size: 1.05em;
-    border: 2px  ;
+    border: 2px;
     border-radius: 30px;
     padding-left: 60px;
     position: relative;
     color: white;
     /* z-index: -1; */
 }
-.nav label::before{
+
+.nav label::before {
     background: url(search.svg);
 }
-.rightnav{
+
+.rightnav {
     /* border: 2px solid red; */
     display: flex;
     width: 50vw;
@@ -91,25 +104,29 @@ body{
     gap: 10px;
     height: 7vh;
 }
-.rightnav h1{
+
+.rightnav h1 {
     color: white;
     /* border: 2px solid red; */
     display: flex;
     align-items: center;
 }
-.rn1{
+
+.rn1 {
     box-sizing: border-box;
     /* border: 2px solid yellow; */
-    width:20vw;
+    width: 20vw;
     margin-right: 10px;
 }
-.rightnav .rn1 ul{
+
+.rightnav .rn1 ul {
     list-style: none;
     color: white;
     gap: 10px;
     justify-content: flex-end;
 }
-.rn1 a{
+
+.rn1 a {
     text-decoration: none;
     color: rgb(165, 161, 161);
     font-family: var(--encore-body-font-stack, var(--fallback-fonts, sans-serif)), sans-serif;
@@ -117,47 +134,57 @@ body{
     font-size: 1em;
 
 }
-.rn1 a:hover{
+
+.rn1 a:hover {
     color: white;
 }
-.rn1 a{}
-.rn1 li:hover{
+
+.rn1 a {}
+
+.rn1 li:hover {
     scale: 1.09;
     color: white;
 }
-.rn2{
+
+.rn2 {
     box-sizing: border-box;
     width: 20vw;
     /* border: 2px solid red; */
     gap: 10px;
 }
-.rn2 ul{
+
+.rn2 ul {
     display: flex;
     list-style: none;
     justify-content: flex-start;
     gap: 10px;
     white-space: nowrap;
     align-items: center;
-    
+
 
 }
-.rn2 a{
+
+.rn2 a {
     text-decoration: none;
-    color: rgb(165, 161, 161);  
+    color: rgb(165, 161, 161);
     font-family: var(--encore-body-font-stack, var(--fallback-fonts, sans-serif)), sans-serif;
     font-weight: bolder;
     font-size: 0.9em;
 }
-.rn2 a:hover{
+
+.rn2 a:hover {
     color: white;
 }
-.rn2 li{
+
+.rn2 li {
     gap: 10px;
 }
-.rn2 li img{
+
+.rn2 li img {
     height: 20px;
 }
-.button{
+
+.button {
     box-sizing: border-box;
     border: 2px solid white;
     width: 8vw;
@@ -169,27 +196,41 @@ body{
     border-radius: 30px;
     background-color: white;
 }
-.button:hover{
+
+.button:hover {
     scale: 1.05;
 }
-.button a{
+
+.button a {
     color: black;
     font-family: var(--encore-body-font-stack, var(--fallback-fonts, sans-serif)), sans-serif;
 }
-.rn2 li:hover{
+
+.rn2 li:hover {
     scale: 1.09;
     color: white;
 }
-.container{
-    width: 100vw;
+
+.container {
+    width: calc(100vw - 19px);
     min-height: 90vh;
-    border: 2px solid red;
-    position: relative;
-    top: 800px;
-    right: 1px
-    
+    /* border: 2px solid red; */
+    position: absolute;
+    top: 80px;
+    margin: 2px auto;
+
 }
-.container .box1-main{
-    widtvw;
+
+.container .box2-side{
+    box-sizing: border-box;
+    border: 2px solid yellow;
+    width: 30vw;
+    min-height: 90vh;
+    /* position: fixed; */
+}
+.container .box1-main {
+    box-sizing: border-box;
+    border: 2px solid red;
+    width: 70%;
     min-height: 90vh;
 }
