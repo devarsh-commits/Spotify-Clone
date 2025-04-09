@@ -4,8 +4,16 @@ body {
     background-color: black;
 }
 
+body::-webkit-scrollbar {
+    width: 9px;
+}
+
+
 --root {
-    --back-color: background-color: rgb(31, 30, 30);
+    --background-elevated-base:
+        --background-base: #121212;
+    --text-subdued: #b3b3b3;
+    --text-base: #fff;
 }
 
 .nav {
@@ -15,6 +23,8 @@ body {
     padding-top: 15px;
     box-sizing: border-box;
     position: fixed;
+    margin: 10px;
+    z-index: 1;
 
 }
 
@@ -78,7 +88,7 @@ body {
 .nav input {
     width: 25vw;
     height: 6vh;
-    background-color: rgb(31, 30, 30);
+    background-color: #121212;
     display: flex;
     justify-content: flex-start;
     font-family: var(--encore-body-font-stack, var(--fallback-fonts, sans-serif)), sans-serif;
@@ -92,10 +102,6 @@ body {
     /* z-index: -1; */
 }
 
-.nav label::before {
-    background: url(search.svg);
-}
-
 .rightnav {
     /* border: 2px solid red; */
     display: flex;
@@ -106,10 +112,10 @@ body {
 }
 
 .rightnav h1 {
-    color: white;
     /* border: 2px solid red; */
     display: flex;
     align-items: center;
+    color: #fff;
 }
 
 .rn1 {
@@ -216,21 +222,185 @@ body {
     min-height: 90vh;
     /* border: 2px solid red; */
     position: absolute;
-    top: 80px;
-    margin: 2px auto;
+    top: 70px;
+    z-index: -1;
+    gap: 8px;
+    left: 8px;
+
 
 }
 
-.container .box2-side{
+.container .box2-side {
+    position: relative;
     box-sizing: border-box;
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
     width: 30vw;
     min-height: 90vh;
-    /* position: fixed; */
+    background-color: #121212;
+    border-radius: 10px;
+    margin-left: 2px;
+    display: flex;
+    flex-direction: column;
 }
+
 .container .box1-main {
     box-sizing: border-box;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 70%;
     min-height: 90vh;
+    background-color: #121212;
+    border-radius: 10px;
+}
+
+.library {
+    box-sizing: border-box;
+    /* border: 2px solid red; */
+    width: 100%;
+    height: 12vh;
+    font-size: 0.5em;
+    color: #fff;
+    justify-content: space-between;
+    padding: 0px 0px 20px 20px;
+    /* position: fixed; */
+    position: sticky;
+    top: 10vh;
+    z-index: 3;
+    box-shadow: 5px 5px 15px 5px rgb(10, 10, 10);
+
+}
+
+.library img {
+    /* border: 2px solid red; */
+    height: 15px;
+    transform: rotate(45deg);
+    padding: 6px;
+}
+
+.library .img {
+    display: flex;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.library .img:hover {
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: rgb(10, 9, 9);
+}
+
+.playlist {
+    overflow-y: auto;
+    /* border: 2px solid blue; */
+    /* margin: 15px auto; */
+}
+
+.playlist::-webkit-scrollbar {
+    width: 8px;
+}
+
+.playlist::-webkit-scrollbar-track {
+    background-color: var(--background-elevated-base)
+}
+
+.playlist::-webkit-scrollbar-thumb {
+    background-color: #606060;
+}
+
+.playlist .box {
+    /* border: 2px solid red; */
+    box-sizing: border-box;
+    border-radius: 10px;
+    height: 22vh;
+    background-color: #1f1f1f;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.box1 {
+    margin-top: 30px;
+    margin-bottom: 35px;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.box2 {
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.box h1 {
+    color: #fff;
+    font-weight: 700;
+    font-family: SpotifyMixUI, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif);
+    font-size: 0.99em;
+}
+
+.box p {
+    color: #fff;
+    font-family: SpotifyMixUI, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif);
+    font-size: 0.875rem;
+    font-weight: 400;
+
+}
+
+.box2 .button {
+    width: 150px;
+    white-space: nowrap;
+}
+
+.box .button {
+    height: 4.5vh;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-family: SpotifyMixUI, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif);
+    font-size: 0.899em;
+    padding: 10px;
+    margin-top: 40px;
+    cursor: pointer;
+
+}
+
+.terms {
+    /* border: 2px solid yellow; */
+    width: 100%;
+    height: 40%;
+    position: sticky;
+    bottom: 0px;
+    z-index: 2;
+    background-color: var(--background-elevated-base);
+    overflow: none;
+}
+.cont{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding-top: 20px;
+    color: #b3b3b3;
+}
+
+.terms .box {
+    /* border: 2px solid yellow; */
+    min-width: 6vw;
+    height: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7em;
+    white-space: nowrap;
+    font-family: SpotifyMixUI, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif);
+    font-weight: 500;
+}
+.terms a{
+    text-decoration: none;
+    color: white;
+    font-family: SpotifyMixUI, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif);
+    font-size: 0.79em;
+    padding: 20px;
+    font-weight: 500;
+}
+
+.box1-main {
+    position: sticky;
+    top: 8vh;
+
 }
