@@ -423,3 +423,77 @@ body::-webkit-scrollbar {
     top: 8vh;
 
 }
+.SpotifyPlaylist h1{
+    font-size: 1.5em;
+    padding-left: 23px;
+    padding-top: 8px;
+    font-family: SpotifyMixUI, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif);
+    color: white;
+    position: sticky;
+    top: 10vh;
+    z-index: 10;
+}
+.cardcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    height: 80vh;
+    overflow-y: auto;
+    gap: 10px;
+    margin-left: 14px;
+
+}
+.cardcontainer::-webkit-scrollbar {
+    width: 8px;
+}
+
+.cardcontainer::-webkit-scrollbar-track {
+    background-color: var(--background-elevated-base)
+}
+
+.cardcontainer::-webkit-scrollbar-thumb {
+    background-color: #606060;
+}
+.cardcontainer .cards{
+    box-sizing: border-box;
+    color: white;
+    /* border: 2px solid red; */
+    width: 220px;
+    height: 340px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    position: relative;
+    /* text-wrap: nowrap; */
+    
+}
+.cards img{
+    width: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+.cards h2{
+    font-size: 1em;
+    color: #fff;
+}
+.cards p{
+    color:#b3b3b3;
+    font-size: 0.9em;
+}
+.cards:hover{
+    background-color: #272626;
+}
+.play{
+    /* border: 2px solid red; */
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #3be477;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 140px;
+    right: 30px;
+}
+.play img{
+    height: 30px;
+}
