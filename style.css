@@ -290,7 +290,9 @@ body::-webkit-scrollbar {
 }
 
 .playlist {
+    height: 40vh;
     overflow-y: auto;
+    color: #fff;
     /* border: 2px solid blue; */
     /* margin: 15px auto; */
 }
@@ -307,14 +309,20 @@ body::-webkit-scrollbar {
     background-color: #606060;
 }
 
-.playlist .box {
+.playlist ol li {
     /* border: 2px solid red; */
     box-sizing: border-box;
     border-radius: 10px;
-    height: 22vh;
     background-color: #1f1f1f;
-    margin-left: 12px;
-    margin-right: 12px;
+    margin: 12px;
+    padding: 20px;
+    word-wrap: break-word;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+   
 }
 
 .box1 {
@@ -436,7 +444,7 @@ body::-webkit-scrollbar {
 .cardcontainer{
     display: flex;
     flex-wrap: wrap;
-    height: 80vh;
+    height: 73vh;
     overflow-y: auto;
     gap: 10px;
     margin-left: 14px;
@@ -496,4 +504,40 @@ body::-webkit-scrollbar {
 }
 .play img{
     height: 30px;
+}
+.playbar{
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    width: 98%;
+    background-color: rgb(76, 82, 76);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius:30px ;
+    margin: 10px;
+}
+.seekbar{
+   background-color: aquamarine;
+    position: absolute;
+    bottom: 0;
+    width: 95%;
+    height: 5px;
+    border-radius: 10px;
+}
+.crcle{
+    width: 18px;
+    height: 18px;
+    /* border: 2px solid red; */
+    border-radius: 13px;
+    background-color: white;
+    position: absolute;
+    top: -9px;
+    bottom: 10px;
+    left: 0%;
+    transition: left 0.5s ease-in-out;
+}
+.icons{
+    gap: 15px;
 }

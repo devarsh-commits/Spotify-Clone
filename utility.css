@@ -25,3 +25,6 @@
 .invert{
     filter: invert(1);
 }
+.wrap{
+    white-space: nowrap;
+}
