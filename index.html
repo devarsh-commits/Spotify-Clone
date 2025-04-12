@@ -7,7 +7,8 @@
     <title>Spotify - Web Player: Music for everyone</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utility.css">
-    <link rel="icon" sizes="32x32" type="image/png" href="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png">
+    <link rel="icon" sizes="32x32" type="image/png"
+        href="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png">
 </head>
 
 <body>
@@ -51,13 +52,13 @@
                 <div class="img flex justify-cont"> <img src="browse.svg" alt="" class="invert"></div>
             </div>
             <div class="playlist font">
-              <ol>
-                <li>
-                    <img src="music.svg" alt="" class="c-svg">
-                    <div>Song name</div>
-                    <div class="flex">Play Now   <img src="splay.svg" alt="" class="c-svg"></div>
-                </li>
-              </ol>
+                <ol>
+                    <li>
+                        <img src="music.svg" alt="" class="c-svg">
+                        <div class="info">Song name</div>
+                        <div class="flex">Play Now <img src="splay.svg" alt="" class="c-svg"></div>
+                    </li>
+                </ol>
             </div>
             <div class="terms">
                 <div class="cont">
@@ -114,14 +115,18 @@
                 </div>
             </div>
             <div class="playbar">
-                <div class="songinfo"></div>
-                <div class="icons flex align-itm justify-cont">
-                    <img src="previ.svg" alt="">
-                    <img src="splay.svg" alt="">
-                    <img src="next.svg" alt="">
+                <div class="abvbar flex font">
+                    <div class="songinfo"></div>
+                    <div class="icons flex align-itm justify-cont">
+                        <img id="prev" src="previ.svg" alt="">
+                        <img id="play" src="splay.svg" alt="">
+                        <img id="next" src="next.svg" alt="">
+                    </div>
+                    <div class="songtime"></div>
                 </div>
-                <div class="songtime"></div>
-                <div class="seekbar"><div class="crcle"></div></div>
+                <div class="seekbar">
+                    <div class="crcle"></div>
+                </div>
             </div>
         </div>
     </div>

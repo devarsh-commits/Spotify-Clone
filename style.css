@@ -510,6 +510,7 @@ body::-webkit-scrollbar {
     position: absolute;
     bottom: 0;
     width: 98%;
+    height: 50px;
     background-color: rgb(76, 82, 76);
     display: flex;
     align-items: center;
@@ -538,6 +539,26 @@ body::-webkit-scrollbar {
     left: 0%;
     transition: left 0.5s ease-in-out;
 }
+.songinfo{
+    /* border: 2px solid red; */
+    width: 15vw;
+}
+.abvbar{
+    justify-content: space-around;
+    gap: 80px;
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: 500;
+}
 .icons{
+    /* border: 2x solid red; */
     gap: 15px;
+    cursor: pointer;
+}
+.songtime{
+    width: 15vw;
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
