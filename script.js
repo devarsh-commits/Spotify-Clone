@@ -81,7 +81,15 @@ async function main(params) {
     currentsong.addEventListener("timeupdate",()=>{
         console.log(currentsong.currentTime,currentsong.duration);
         document.querySelector(".songtime").innerHTML=`${formatTime(currentsong.currentTime)}:${formatTime(currentsong.duration)}`
+        document.querySelector(".crcle").style.left=(currentsong.currentTime/currentsong.duration)*100 +"%"
+
     })
+    //add an even listner to seekbar
+   document.querySelector(".seekbar").addEventListener("click",e=>{
+    let percent=(e.offsetX/e.target.getBoundingClientRect().width)*100;
+        document.querySelector(".crcle").style.left=percent +"%";
+        currentsong.currentTime=(currentsong.duration*percent)/100;
+   })
 }
 main();
 

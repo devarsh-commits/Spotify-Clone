@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: black;
+    position: relative;
 }
 
 body::-webkit-scrollbar {
@@ -231,15 +232,13 @@ body::-webkit-scrollbar {
 }
 
 .container .box2-side {
-    position: relative;
-    left: 7px;
     box-sizing: border-box;
     /* border: 2px solid yellow; */
     width: 30vw;
     min-height: 90vh;
     background-color: #121212;
     border-radius: 10px;
-    /* margin-left: 2px; */
+    margin-left: 5px;
     display: flex;
     flex-direction: column;
 }
@@ -262,6 +261,7 @@ body::-webkit-scrollbar {
     color: #fff;
     justify-content: space-between;
     padding: 0px 0px 20px 20px;
+    margin: 14px auto;
     /* position: fixed; */
     position: sticky;
     top: 10vh;
@@ -428,6 +428,7 @@ body::-webkit-scrollbar {
 
 .box1-main {
     position: sticky;
+    margin: -8px;
     top: 8vh;
 
 }
@@ -524,8 +525,9 @@ body::-webkit-scrollbar {
     position: absolute;
     bottom: 0;
     width: 95%;
-    height: 5px;
+    height: 4px;
     border-radius: 10px;
+    cursor: pointer;
 }
 .crcle{
     width: 18px;
@@ -537,7 +539,7 @@ body::-webkit-scrollbar {
     top: -9px;
     bottom: 10px;
     left: 0%;
-    transition: left 0.5s ease-in-out;
+    transition: left 0.5s ;
 }
 .songinfo{
     /* border: 2px solid red; */
@@ -561,4 +563,14 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+@media only screen and (max-width:1400px) {
+   .box2-side{
+    border: 2px solid red;
+    position: absolute;
+    left: -100%;
+    z-index: 3;
+    transition: all .3s;
+    width: 255px;
+   }
 }
