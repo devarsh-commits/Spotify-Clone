@@ -90,6 +90,13 @@ async function main(params) {
         document.querySelector(".crcle").style.left=percent +"%";
         currentsong.currentTime=(currentsong.duration*percent)/100;
    })
+   document.querySelector(".hamburger").addEventListener("click", () => {
+    document.querySelector(".box2-side").style.left=0;
+  });
+  document.querySelector(".img").addEventListener("click",()=>{
+    document.querySelector(".box2-side").style.left=-108 + "%";
+  })
+  
 }
 main();
 

@@ -9,12 +9,16 @@
     <link rel="stylesheet" href="utility.css">
     <link rel="icon" sizes="32x32" type="image/png"
         href="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png">
+    <script src="script.js"></script>
 </head>
 
 <body>
     <!-- header section starts here -->
     <div class="nav flex align-itm ">
         <div class="leftnav flex">
+            <div class="hamburger">
+                <img src="hamburg.svg" alt="" class="c-svg">
+            </div>
             <img src="logo.svg" alt="" class="c-svg logo ">
             <div class="circle">
                 <img src="home.svg" alt="" class="c-svg home">
@@ -46,7 +50,7 @@
         </div>
     </div>
     <div class="container flex">
-        <div class="box2-side">
+        <div class="box2-side" id="b2">
             <div class="library flex align-itm">
                 <h1 class="font">Your Library</h1>
                 <div class="img flex justify-cont"> <img src="browse.svg" alt="" class="invert"></div>
@@ -130,7 +134,6 @@
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
 </body>
 
 </html>
