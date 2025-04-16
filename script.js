@@ -1,5 +1,6 @@
 console.log("Let's start our JavScript")
 let currentsong = new Audio();
+let songs=[];
 //Writing a program to add cards dynamically
 async function fetchsong(params) {
     let a = await fetch("http://127.0.0.1:3000/songs/");
@@ -40,8 +41,9 @@ const playmusic = (track,pause=false) => {
 }
 async function main(params) {
     //get the list of the songs
-    let songs = await fetchsong();
+     songs = await fetchsong();
     playmusic(songs[0],true);
+    
 
 
     //show all the songs in the playlists
@@ -96,6 +98,26 @@ async function main(params) {
   document.querySelector(".img").addEventListener("click",()=>{
     document.querySelector(".box2-side").style.left=-108 + "%";
   })
+
+  document.getElementById("next").addEventListener("click",()=>{
+    let index=(songs.indexOf(currentsong.src.split("/songs/")[1]))
+    if(index + 1 < songs.length){
+        playmusic(songs[index+1])
+    }
+  }
+   )
+
+   
+  document.getElementById("prev").addEventListener("click",()=>{
+    let index=(songs.indexOf(currentsong.src.split("/songs/")[1]))
+    if(index - 1  >= 0){
+        playmusic(songs[index-1 ])
+    }
+  }
+   )
+
+   
+
   
 }
 main();

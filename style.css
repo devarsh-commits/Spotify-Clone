@@ -697,12 +697,18 @@ body::-webkit-scrollbar {
         gap: 50px;
     }
    }
-   @media screen and (max-width:415){
-     .logo{
-        width: 50px;
-        left: -31px;
-     }
-    .leftnav .hamburger{
-        border: 2px solid red;
+   @media screen and (max-width: 415px) {
+    .logo {
+      width: 50px;
+      left: -31px;
     }
-   }
+  
+    .hamburger {
+      border: 2px solid red;
+    }
+  
+    .songinfo {
+      font-size: 10px;
+    }
+  }
+  
