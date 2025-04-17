@@ -542,7 +542,7 @@ body::-webkit-scrollbar {
 }
 
 .seekbar {
-    background-color: aquamarine;
+    background-color:#3be477;
     position: absolute;
     bottom: 0;
     width: 95%;
@@ -590,8 +590,16 @@ body::-webkit-scrollbar {
     align-items: center;
     justify-content: center;
 }
-
-
+.volume{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.range{
+    border: 1px solid black;
+    accent-color: #3be477;
+}
 @media only screen and (max-width:1400px) {
     .container .box2-side {
         /* border: 2px solid red; */

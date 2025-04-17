@@ -115,6 +115,10 @@ async function main(params) {
     }
   }
    )
+   document.querySelector(".volume").getElementsByTagName("input")[0].addEventListener("change",e=>{
+    console.log(e.target,e.target.value);
+    currentsong.volume=e.target.value/100;
+   })
 
    
 
