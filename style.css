@@ -1,3 +1,10 @@
+:root{
+    --background-elevated-base:
+    --background-base: #121212;
+    --text-subdued: #b3b3b3;
+    --text-base: #fff;
+    --a:0;
+}
 body {
     margin: 0;
     padding: 0;
@@ -10,11 +17,12 @@ body::-webkit-scrollbar {
 }
 
 
---root {
+--root{
     --background-elevated-base:
-        --background-base: #121212;
+    --background-base: #121212;
     --text-subdued: #b3b3b3;
     --text-base: #fff;
+    --a:0;
 }
 
 .nav {
@@ -507,9 +515,11 @@ body::-webkit-scrollbar {
 
 .cards:hover {
     background-color: #272626;
+    transition: all 0.9s;
+    --a:1;
 }
 
-.play {
+.play{
     /* border: 2px solid red; */
     width: 50px;
     height: 50px;
@@ -520,6 +530,8 @@ body::-webkit-scrollbar {
     position: absolute;
     bottom: 140px;
     right: 30px;
+    opacity: var(--a);
+    transition: all 0.7s;
 }
 
 .play img {
@@ -599,6 +611,7 @@ body::-webkit-scrollbar {
 .range{
     border: 1px solid black;
     accent-color: #3be477;
+    transition: all .9s;
 }
 @media only screen and (max-width:1400px) {
     .container .box2-side {
