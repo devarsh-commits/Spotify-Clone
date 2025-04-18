@@ -65,10 +65,57 @@ const playmusic = (track,pause=false) => {
     document.querySelector(".songinfo").innerHTML=decodeURI(track);
     document.querySelector(".songtime").innerHTML="00:00/00:00"
 }
+async function displayAlbums() {
+    let a = await fetch(`http://127.0.0.1:3000/songs/`);
+    let response = await a.text();
+    let div = document.createElement("div");
+    div.innerHTML = response;
+    console.log(div);
+    let anchors=div.getElementsByTagName("a");
+    let array=Array.from(anchors);
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        if(element.href.includes("/songs")){
+            let folder=element.href.split("/").splice(-2)[0];
+            // console.log(folder);
+            let a = await fetch(`http://127.0.0.1:3000/songs/${folder}/info.json`);
+            let response=await a.json();
+            console.log(response);
+            let html = `
+                    <div data-folder="${folder}" class="cards font">
+                        <div class="play">
+                        <img src="play.svg" alt="">  
+                        </div>
+                        <img src="/songs/${folder}/cover.jpg" alt="">
+                        <h2>${response.title}</h2>
+                        <p>${response.description}</p>
+                    </div>`
+    document.querySelector(".cardcontainer").innerHTML = document.querySelector(".cardcontainer").innerHTML + html;
+}
+
+
+        }
+     //adding the cards folder
+   Array.from(document.getElementsByClassName("cards")).forEach(e=>{
+    console.log(e)
+    e.addEventListener("click", async item=>{
+        let albmname=item.currentTarget.dataset.folder.replace("-"," ");
+        console.log(albmname);
+       songs= await fetchsong(`songs/${item.currentTarget.dataset.folder}`)
+       playmusic(songs[0])
+       console.log(songs);
+       let alb=e.getElementsByTagName("h2")[0].innerHTML;
+       document.querySelector(".albm-name").innerHTML=`Currently Playing:${alb}`
+    })
+   })
+    }
 async function main(params) {
     //get the list of the songs
-     await fetchsong("songs/arijit");
+     await fetchsong("songs/HoneySingh");
     playmusic(songs[0],true);
+
+    //display all the albums on the page
+    displayAlbums();
 
     play.addEventListener("click",()=>{
         if(currentsong.paused){
@@ -134,15 +181,7 @@ async function main(params) {
             currentsong.volume=50/100;
            }
    })
-   //adding the cards folder
-   Array.from(document.getElementsByClassName("cards")).forEach(e=>{
-    console.log(e)
-    e.addEventListener("click", async item=>{
-        console.log(item.currentTarget.dataset.folder);
-       songs= await fetchsong(`songs/${item.currentTarget.dataset.folder}`)
-       console.log(songs)
-    })
-   })
+   //generating the live name of albums
    
 
 }
